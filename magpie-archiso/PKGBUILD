@@ -1,9 +1,9 @@
 # Maintainer: Rizwan Hasan <rizwan.hasan486@gmail.com>
 
-_pkgname=archiso
-pkgname="magpie-${_pkgname}"
+pkgname=magpie-archiso
 pkgver=42
 pkgrel=1
+branch=master
 pkgdesc="MagpieOS livecd/liveusb generation scripts"
 arch=('any')
 url="http://magpieos.net"
@@ -12,10 +12,10 @@ depends=('libisoburn' 'squashfs-tools' 'btrfs-progs' 'dosfstools' 'lynx' 'arch-i
 makedepends=('git')
 provides=('archiso')
 conflicts=('archiso')
-source=("${pkgname}-${pkgver}.tar.xz")
-md5sums=('SKIP')
+source=("${pkgname}-${pkgver}.tar.xz"::"https://github.com/magpie-linux/magpie-archiso/archive/master.zip")
+md5sums=('4cb10c5df274949a65ea4dcecaabd4d4')
 
 package() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"
+  cd "${srcdir}/${pkgname}-${branch}"
   make DESTDIR="${pkgdir}/" install
 }
