@@ -2,16 +2,17 @@
 
 pkgname=magpieos-wallpaper
 pkgver=2.5
+commit=master
 pkgrel=2
 pkgdesc="Wallpapers for MagpieOS"
 arch=('any')
 url="http://www.magpieos.net"
 license=('GPL3')
-source=(${pkgname}.tar.xz)
-md5sums=('0520ef38befd862a659767189ee319fe')
+source=(${pkgname}.tar.gz::'https://github.com/magpie-linux/magpieos-wallpaper/archive/master.tar.gz')
+md5sums=('56ca63702eee784ec589f99c7c4e2cc6')
 
 package() {
-  cd "${srcdir}/${pkgname}"
+  cd "${srcdir}/${pkgname}-${commit}"
   install -d "${pkgdir}/usr/share/magpieos/wallpaper"
   install -d "${pkgdir}/usr/share/backgrounds"
   ln -s "../magpieos/wallpaper" "${pkgdir}/usr/share/backgrounds/magpieos" # For Xfce Support
