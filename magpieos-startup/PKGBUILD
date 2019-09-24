@@ -2,7 +2,7 @@
 
 pkgname=magpieos-startup
 pkgver=3.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Startup sound configuration for MagpieOS"
 arch=('x86_64')
 url=""
@@ -11,7 +11,7 @@ source=("startup.ogg"
 		"startup.sh"
 		"LICENSE")
 md5sums=('c5a7004727e8204ce221005f240e8c89'
-   		 'fe86a90f4dd2f09966b40397d3c0e2b5'
+   		 'c6dbad5bb4238ab8618b6f1396465af2'
          'd32239bcb673463ab874e80d47fae504')
 
 package() {
